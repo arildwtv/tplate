@@ -1,5 +1,8 @@
 # tplate
 
+[![npm version](https://badge.fury.io/js/tplate.svg)](http://badge.fury.io/js/tplate)
+<img src="https://travis-ci.org/arildwtv/tplate.svg?branch=master" />
+
 <blockquote>The tiny, pure-function template engine.</blockquote>
 
 ## What ...?
