@@ -22,9 +22,9 @@ export function createTemplate(indentation = '  ') {
   const lineBreak = '\n';
 
   /**
-   *
-   * @param args
-   * @returns {*}
+   * Concatenates the values of the arguments to actual lines.
+   * @param args The arguments.
+   * @returns {String} The concatenated values.
    */
   function t(...args) {
     const definedArgs = flatMap(args)
@@ -44,11 +44,25 @@ export function createTemplate(indentation = '  ') {
     return output.join(lineBreak);
   }
 
+  /**
+   * Works exactly like the t function, but also indents each line that args produces, one level
+   * @param args The arguments.
+   * @returns {String} The indented, concatenated values.
+   */
   function indent(...args) {
     const output = t.apply(undefined, args);
     return indentString(output, indentation, 1);
   }
 
+  /**
+   * Utility mapping function. Works just like map, but wraps the map handler, giving it a utility
+   * object for determining the position of the current line (first, last, even, etc). If the array
+   * is empty, an optional handler may be executed.
+   * @param array {Array} The array to map.
+   * @param mapHandler {Function} The map handler, receiving each item and a line info object.
+   * @param emptyHandler {Function} Optional. The handler that is called if the array is empty.
+   * @returns {Array} The mapped array.
+   */
   function map(array, mapHandler, emptyHandler) {
     const count = array.length;
 
