@@ -1,6 +1,6 @@
 {
   "name": "tplate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The tiny, pure-function template engine",
   "main": "dist/index.js",
   "scripts": {
@@ -8,6 +8,10 @@
     "test": "mocha --compilers js:babel-register",
     "lint": "./node_modules/.bin/eslint src",
     "build": "./node_modules/.bin/babel src/index.js -o dist/index.js"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/arildwtv/tplate.git"
   },
   "keywords": [
     "template",
